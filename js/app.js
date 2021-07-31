@@ -24,6 +24,7 @@ function handleSubmit(evt) {
 
 function handleSuccess(evt) {
     if (evt.target.status !== 200) {
+        const data = JSON.parse(evt.target.responseText);
         phoneErrorEl.textContent = data.error;
         messageEl.textContent = 'Произошла ошибка';
         return;
