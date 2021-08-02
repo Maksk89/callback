@@ -36,9 +36,9 @@ function handleSuccess(evt) {
 
 function handleError(evt) {
     if (evt.target.status === 400) {
-        messageEl.textContent = 'Произошла ошибка';
         const data = JSON.parse(evt.target.responseText);
         phoneErrorEl.textContent = data.error;
+        messageEl.textContent = 'Произошла ошибка';
         return;
     }
 }
